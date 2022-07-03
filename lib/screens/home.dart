@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: Obx(()=>Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(child: Text("Clicks: ${counterContoller.counter.value}")),
@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
                   },
                   child: Text("Open Other Screen")))
         ],
-      ),
+      )),
       floatingActionButton: FloatingActionButton(onPressed: () {
         counterContoller.increment();
       },
