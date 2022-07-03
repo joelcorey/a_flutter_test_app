@@ -12,13 +12,20 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("Clicks: ${counterContoller.counter.value}"),
+          Center(child: Text("Clicks: ${counterContoller.counter.value}")),
           SizedBox(height: 10),
-          ElevatedButton(onPressed: (){
-            Get.to(OtherScreen());
-          }, child: Text("Open Other Screen"))
+          Center(
+              child: ElevatedButton(
+                  onPressed: () {
+                    Get.to(OtherScreen());
+                  },
+                  child: Text("Open Other Screen")))
         ],
-      )
+      ),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        counterContoller.increment();
+      },
+      child: Icon(Icons.add),),
     );
   }
 }
